@@ -1,0 +1,549 @@
+/* ==============================
+   DESIGN SYSTEM
+   Instituto Recomeço
+   ============================== */
+
+:root {
+    /* CORES */
+    --cor-primaria: #2E7D32;
+    --cor-secundaria: #66BB6A;
+    --cor-destaque: #FFA726;
+    --cor-fundo: #F2F2F2;
+    --cor-fundo-claro: #FFFFFF;
+    --cor-texto: #333333;
+    --cor-texto-secundario: #666666;
+    --cor-borda: #CCCCCC;
+    --cor-sucesso: #43A047;
+
+    /* TIPOGRAFIA */
+    --fonte-pequena: 0.875rem;
+    --fonte-normal: 1rem;
+    --fonte-media: 1.25rem;
+    --fonte-titulo: 1.75rem;
+    --fonte-grande: 2.25rem;
+
+    /* ESPAÇAMENTOS */
+    --espaco-1: 4px;
+    --espaco-2: 8px;
+    --espaco-3: 16px;
+    --espaco-4: 24px;
+    --espaco-5: 32px;
+    --espaco-6: 48px;
+}
+
+
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+   ============================== */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    margin: 0;
+    padding: var(--espaco-5);
+}
+
+
+/* ==============================
+   CABEÇALHO
+   ============================== */
+
+header {
+    text-align: center;
+    background-color: var(--cor-fundo-claro);
+    padding: var(--espaco-4);
+    border-radius: 10px;
+    margin-bottom: var(--espaco-5);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-top: 0;
+    margin-bottom: var(--espaco-2);
+    font-size: var(--fonte-grande);
+    color: var(--cor-primaria);
+}
+
+header p {
+    color: var(--cor-texto-secundario);
+    font-size: var(--fonte-normal);
+}
+
+
+/* ==============================
+   MENU DE NAVEGAÇÃO
+   ============================== */
+
+nav {
+    margin-top: var(--espaco-4);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+    margin: 0 var(--espaco-2);
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--cor-destaque);
+    text-decoration: underline;
+}
+
+
+/* ==============================
+   TÍTULOS
+   ============================== */
+
+h1 {
+    text-align: center;
+    color: var(--cor-texto);
+}
+
+main section h2 {
+    margin-top: 0;
+    color: var(--cor-primaria);
+    font-size: var(--fonte-titulo);
+}
+
+
+/* ==============================
+   SEÇÕES PRINCIPAIS
+   ============================== */
+
+main section {
+    background-color: var(--cor-fundo-claro);
+    padding: var(--espaco-4);
+    margin-bottom: var(--espaco-4);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+main section p {
+    line-height: 1.6;
+    font-size: var(--fonte-normal);
+}
+
+
+/* ==============================
+   IMAGENS
+   ============================== */
+
+section img {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin: var(--espaco-4) auto;
+    border-radius: 10px;
+}
+
+
+/* ==============================
+   FORMULÁRIO
+   ============================== */
+
+form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+fieldset {
+    background-color: var(--cor-fundo-claro);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: var(--espaco-4);
+    margin-bottom: var(--espaco-4);
+}
+
+legend {
+    font-size: var(--fonte-media);
+    font-weight: bold;
+    padding: 0 var(--espaco-2);
+    color: var(--cor-primaria);
+}
+
+label {
+    display: block;
+    margin-bottom: var(--espaco-1);
+    font-weight: bold;
+    font-size: var(--fonte-normal);
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    font-size: var(--fonte-normal);
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 5px rgba(46, 125, 50, 0.2);
+}
+
+
+/* ==============================
+   BOTÕES
+   ============================== */
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: var(--espaco-2);
+    font-size: var(--fonte-normal);
+}
+
+.btn-cadastrar {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+.btn-limpar {
+    background-color: var(--cor-borda);
+    color: var(--cor-texto);
+}
+
+.btn-cadastrar:hover,
+.btn-limpar:hover {
+    opacity: 0.8;
+}
+
+
+/* ==============================
+   RODAPÉ
+   ============================== */
+
+footer {
+    text-align: center;
+    margin-top: var(--espaco-5);
+    padding: var(--espaco-4);
+    color: var(--cor-texto-secundario);
+    font-size: var(--fonte-pequena);
+}
+/* ==============================
+   LAYOUT COM CSS GRID
+   GRID DE 12 COLUNAS
+   ============================== */
+
+main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--espaco-4);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cada seção ocupa 10 das 12 colunas */
+main section {
+    grid-column: 2 / span 10;
+}
+
+
+/* ==============================
+   BREAKPOINT 1
+   Telas grandes
+   Até 1200px
+   ============================== */
+
+@media (max-width: 1200px) {
+
+    main {
+        padding: 0 var(--espaco-3);
+    }
+
+    main section {
+        grid-column: 1 / span 12;
+    }
+}
+
+
+/* ==============================
+   BREAKPOINT 2
+   Notebooks e tablets grandes
+   Até 992px
+   ============================== */
+
+@media (max-width: 992px) {
+
+    body {
+        padding: var(--espaco-4);
+    }
+
+    header {
+        padding: var(--espaco-3);
+    }
+
+    main {
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--espaco-3);
+    }
+
+    main section {
+        grid-column: 1 / span 12;
+    }
+}
+
+
+/* ==============================
+   BREAKPOINT 3
+   Tablets
+   Até 768px
+   ============================== */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: var(--espaco-3);
+    }
+
+    header h1 {
+        font-size: var(--fonte-titulo);
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: var(--espaco-2);
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    main {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    main section {
+        grid-column: 1 / span 12;
+        padding: var(--espaco-3);
+    }
+
+    section img {
+        max-width: 100%;
+    }
+}
+
+
+/* ==============================
+   BREAKPOINT 4
+   Celulares
+   Até 576px
+   ============================== */
+
+@media (max-width: 576px) {
+
+    body {
+        padding: var(--espaco-2);
+    }
+
+    header {
+        padding: var(--espaco-3);
+    }
+
+    header h1 {
+        font-size: var(--fonte-media);
+    }
+
+    header p {
+        font-size: var(--fonte-pequena);
+    }
+
+    main {
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--espaco-2);
+    }
+
+    main section {
+        grid-column: 1 / span 12;
+        padding: var(--espaco-3);
+    }
+
+    main section h2 {
+        font-size: var(--fonte-media);
+    }
+
+    input,
+    select,
+    button {
+        font-size: var(--fonte-normal);
+    }
+}
+
+
+/* ==============================
+   BREAKPOINT 5
+   Celulares pequenos
+   Até 400px
+   ============================== */
+
+@media (max-width: 400px) {
+
+    body {
+        padding: var(--espaco-2);
+    }
+
+    header h1 {
+        font-size: var(--fonte-media);
+    }
+
+    main section {
+        padding: var(--espaco-2);
+    }
+
+    main section h2 {
+        font-size: var(--fonte-normal);
+    }
+
+    button {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: var(--espaco-2);
+    }
+
+    footer {
+        font-size: var(--fonte-pequena);
+    }
+}
+/* ==============================
+   COMPONENTES COM FLEXBOX
+   ============================== */
+
+/* Menu de navegação */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--espaco-3);
+}
+
+/* Área dos botões do formulário */
+.form-botoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--espaco-2);
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* ==============================
+   MENU RESPONSIVO / HAMBÚRGUER
+   ============================== */
+
+/* Esconde o checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Esconde o ícone em telas grandes */
+.menu-icon {
+    display: none;
+}
+
+
+/* ==============================
+   TELAS MENORES
+   ============================== */
+
+@media (max-width: 768px) {
+
+    /* Mostra o botão do menu */
+    .menu-icon {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        color: var(--cor-primaria);
+        margin-top: var(--espaco-3);
+    }
+
+    /* Esconde os links inicialmente */
+    header nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--espaco-2);
+        width: 100%;
+        margin-top: var(--espaco-3);
+    }
+
+    /* Mostra o menu quando o usuário clica */
+    #menu-toggle:checked ~ nav {
+        display: flex;
+    }
+
+    header nav a {
+        margin: 0;
+        padding: var(--espaco-2);
+    }
+}
+/* ==============================
+   COMPONENTES DE FEEDBACK
+   ============================== */
+
+/* BADGE */
+
+.badge {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: var(--espaco-1) var(--espaco-3);
+    border-radius: 20px;
+    font-size: var(--fonte-pequena);
+    font-weight: bold;
+    margin-bottom: var(--espaco-3);
+}
+
+
+/* ALERTA */
+
+.alerta {
+    background-color: #FFF3CD;
+    color: #856404;
+    border: 1px solid #FFECB5;
+    border-radius: 8px;
+    padding: var(--espaco-3);
+    margin-bottom: var(--espaco-4);
+}
+
+
+/* TOAST */
+
+.toast {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: var(--espaco-3) var(--espaco-4);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-size: var(--fonte-normal);
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 576px) {
+
+    .toast {
+        left: 20px;
+        right: 20px;
+        bottom: 15px;
+        text-align: center;
+    }
+
+}
