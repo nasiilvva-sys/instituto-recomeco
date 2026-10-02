@@ -24,7 +24,7 @@
 
 <main>
 
-    <h2>Formulário de Cadastro</h2>
+    <h2 id="titulo-cadastro">Formulário de Cadastro</h2>
     <div class="badge">Cadastro de voluntário</div>
 
     <div class="alerta">
@@ -32,11 +32,10 @@
         preencha todos os campos corretamente antes de enviar o cadastro.
     </div>
 
-    <div class="toast">
-        Cadastro pronto para ser enviado!
+    <div class="toast" aria-live="polite">Cadastro pronto para ser enviado!</div>
     </div>
 
-    <form action="#" method="post">
+    <form action="#" method="post" aria-labelledby="titulo-cadastro">
 
         <fieldset>
             <legend>Dados pessoais</legend>
